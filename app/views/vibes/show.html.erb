@@ -1,0 +1,28 @@
+<div class="container-fluid">
+  
+
+<div class="jumbotron">
+        <h4>My Vibe</h4> 
+		<h2><%= @vibe.name %></h2>
+		<h6> State Of Mind</h6> 
+		<p><%= @vibe.state %><p>
+		<h6> Details</h6> 
+		<p><%= @vibe.details %><p>
+   <% if @vibe.aura.attached? %>
+	 <image src="<%=(url_for(@vibe.aura)) %>" alt="profile pic" height="250", width="250"><br>
+   <% end %>
+
+		
+
+		<%= link_to "Edit", edit_vibe_path(@vibe) %>
+		<%= link_to "Delete", vibe_path(@vibe), method: :delete, data: { confirm: "Are you sure?" } %>
+		<%= link_to "Back", root_path %>
+   </div>
+	</div>
+
+
+
+
+
+	 
+ 

@@ -1,0 +1,8 @@
+<h1> My aura RN </h1>
+<%= simple_form_for @vibe do |f| %>
+ 
+<%= f.select :aura, Vibe::AURA_OPTIONS, {}, class: "form Control"%>
+
+<%= f.button :submit %>
+
+<% end %>
