@@ -15,23 +15,23 @@ class Vibe < ApplicationRecord
          def color_aura
           case aura
           when 'hurting'
-            'secondary'
+            'hurting'
           when 'whatevs'
-            'info'
+            'whatevs'
           when 'vibing'
-            'success'
+            'vibing'
           end
         end
           
           def color_state
             case state
+            
             when 'hurting'
-              'secondary'
+              'hurting'
             when 'whatevs'
-              'info'
+              'whatevs'
             when 'vibing'
-              'success'
+              'vibing'
             end
           end
-        
 end

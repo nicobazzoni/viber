@@ -6,12 +6,5 @@ class User < ApplicationRecord
 
          has_many :vibes
 
-         validates :being, inclusion: { in: ['whatevs', 'hurting', 'vibing', ] }
-
-         BEING_OPTIONS = [
-           ['Whateves', 'whatevs'],
-           ['Hurting', 'hurting'],
-           ['Vibing', 'vibing']
-  
-         ]
+         
 end

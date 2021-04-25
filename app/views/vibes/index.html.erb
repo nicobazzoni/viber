@@ -1,4 +1,4 @@
-<div class="container-fluid">
+
 <div class="badge bg-primary text-wrap" style="width: 20rem;">
   <h1> My Vibes </h1>
 </div>
@@ -6,27 +6,32 @@
 </br>
  <% if user_signed_in? %>
 
-<div class="jumbotron">
+
  <% @vibes.each do |vibe| %>
-
-
-  
+  <div class="jumbotron">
     <h2> <%= link_to vibe.name, vibe %> </h2>
-    <h2> <%= vibe.details %> </h2>
-    <h4> State Of Mind</h4> 
-    <span class="badge rounded-pill bg-primary"><%= vibe.color_state %></span>
-    <% end %>
-    </div>
-</div>
+     <h2> <%= vibe.details %> </h2>
     
-
-    <% else %>
-    <% render 'layouts/static_landing_page' %>
-  
-  <% end %>
- </div>
-</div>
+  <span class="badge rounded-pill bg-primary"><%= vibe.color_state %></span>
+  <br>
+          <h4> Picture </h4>
+        <% if vibe.aura.attached? %>
+	<image src="<%=(url_for(vibe.aura)) %>" alt="profile pic" height="250", width="250"><br>
+                      </div>
+                  <% end %>
+                  
+               <% end %>
+                
  
- <br>
+                     <br>
+    
+  
+            <% else %>
+              <% render 'layouts/static_landing_page' %>
+  
+      <% end %>
+
+
+
 
 <%= link_to "New Vibe", new_vibe_path %>
