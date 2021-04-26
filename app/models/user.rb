@@ -6,5 +6,5 @@ class User < ApplicationRecord
 
          has_many :vibes
 
-         
+         has_many :oracles, through: :vibes  
 end

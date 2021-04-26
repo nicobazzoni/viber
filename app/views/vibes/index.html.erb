@@ -1,27 +1,43 @@
 
+
 <div class="badge bg-primary text-wrap" style="width: 20rem;">
   <h1> My Vibes </h1>
 </div>
-<br>
-</br>
+
+
+  
  <% if user_signed_in? %>
 
-
  <% @vibes.each do |vibe| %>
+  
   <div class="jumbotron">
     <h2> <%= link_to vibe.name, vibe %> </h2>
-     <h2> <%= vibe.details %> </h2>
-    
+   
+     <p> <%= vibe.details %> </p>
+           
   <span class="badge rounded-pill bg-primary"><%= vibe.color_state %></span>
   <br>
-          <h4> Picture </h4>
+          
         <% if vibe.aura.attached? %>
 	<image src="<%=(url_for(vibe.aura)) %>" alt="profile pic" height="250", width="250"><br>
+
                       </div>
+
+                       <% if vibe.file.representable? %>
+
+                       <video>
+                       <source src<$= rails_blob_path(vibe.file.video_mp4) %> type="video/mp4"/>
+                       <source src<$= rails_blob_path(vibe.file.video_webm) %> type="video/webm"/>
+                      </video>
+                      
+
+                      
                   <% end %>
                   
                <% end %>
-                
+                 </div>
+                <% end %>
+                 
  
                      <br>
     
@@ -31,7 +47,7 @@
   
       <% end %>
 
-
-
+        
+  
 
 <%= link_to "New Vibe", new_vibe_path %>

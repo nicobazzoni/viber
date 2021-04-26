@@ -1,8 +1,10 @@
 class Vibe < ApplicationRecord
   belongs_to :user
+  has_many :oracles 
   
   validates :state, inclusion: { in: ['whatevs', 'hurting', 'vibing', ] }
   has_one_attached :aura
+  has_one_attached :file
   STATE_OPTIONS = [
     ['Whatevs', 'whatevs'],
     ['Hurting', 'hurting'],

@@ -10,7 +10,11 @@
 		<p><%= @vibe.details %><p>
    <% if @vibe.aura.attached? %>
 	 <image src="<%=(url_for(@vibe.aura)) %>" alt="profile pic" height="250", width="250"><br>
+	 <% if @vibe.file.attached? %>
+                      
+                      <%= video_tag(url_for(@vibe.file)) %>
    <% end %>
+	 <% end %>
 
 		
 

@@ -15,3 +15,84 @@
  */
  @import "bootstrap-sprockets";
  @import "bootstrap";
+
+ .badge { 
+
+  margin: 20px;
+  background-color: black;
+ }
+
+ .jumbotron {
+   padding-right: 30px;
+   padding-left:  110px;
+   margin: 85px;
+   width: 800px;
+  border: 20px;
+  background-color: rgb(237, 243, 245);
+  border: black;
+  border-radius: 5%;
+ }
+
+ 
+
+ .jumbotron a:hover {
+  background-color: #3374C2; //background instead of background-image
+}
+
+.container pt-5 pb-5 a:hover {
+  background-color: #851b1b; //background instead of background-image
+}
+
+a:hover {background: #e8f0ec;
+               color: #ffffff;
+}
+
+ 
+ .body a:hover {background: #e8f0ec;
+  color: #5493db;
+}
+
+.badge {
+  animation-duration: 3s;
+  animation-name: fadeIn 5s;
+ 
+  
+ }
+
+p {
+  animation-duration: 3s;
+  animation-name: slidein;
+  font-family: 'Times New Roman', Times;
+}
+
+@keyframes slidein {
+  from {
+    margin-left: 100%;
+    width: 300%;
+  }
+
+  75% {
+    font-size: 300%;
+    margin-left: 25%;
+    width: 150%;
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+
+@keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+body {
+  background: #FCE97F;
+  animation: fadebackground 25s infinite;
+}
+@keyframes fadebackground {
+  from {background-color: #ffffff;}
+  to {background-color: #000000;}
+}

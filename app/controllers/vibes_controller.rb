@@ -40,12 +40,12 @@ class VibesController < ApplicationController
     else
       render 'new'
     end
-
+  end
     def destroy
       @vibe.destroy
       redirect_to root_path
     end
-  end
+  
 
   private 
   def vibe_params  

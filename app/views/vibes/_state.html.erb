@@ -1,6 +1,3 @@
-<%= simple_form_for @vibe do |f| %>
-<%= f.select :state, label: "My vibe rn", Vibe::STATE_OPTIONS, {}, class: "form Control"%>
-
-<%= f.button :submit %>
-
+<%= form_for @vibe do |f| %>
+ <%= f.collection_check_boxes :options, [[true, 'Yes'] ,[false, 'No']], :first, :last %>
 <% end %>
