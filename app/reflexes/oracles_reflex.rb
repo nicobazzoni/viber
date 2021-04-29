@@ -1,7 +1,15 @@
 # frozen_string_literal: true
 
-class ExampleReflex < ApplicationReflex
-  # Add Reflex methods in this file.
+class OraclesReflex < ApplicationReflex
+  def sort
+    oracles = JSON.parse(element.dataset.oracles)
+    oracles.each do |task|
+      oracle_record = Oracle.find(oracle['id'])
+      oracle_record.update(position: oracle['position'])
+    end
+  end
+
+end# Add Reflex methods in this file.
   #
   # All Reflex instances include CableReady::Broadcaster and expose the following properties:
   #
@@ -31,7 +39,5 @@ class ExampleReflex < ApplicationReflex
   #   end
   #
   # Learn more at: https://docs.stimulusreflex.com/reflexes#reflex-classes
-  def toggle 
-    element.dataset[:id]
-  end
+
 end

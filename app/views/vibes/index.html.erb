@@ -1,7 +1,9 @@
 
-
-<div class="badge bg-primary text-wrap" style="width: 20rem;">
+<div class=" center ">
+<div class="jumbotron" style="width: auto;">
+<div class="container-fluid">
   <h1> My Vibes </h1>
+</div>
 </div>
 
 
@@ -10,13 +12,14 @@
 
  <% @vibes.each do |vibe| %>
   
-  <div class="jumbotron">
+  <div class= " center ">
+   <div class="jumbotron">
     <h2> <%= link_to vibe.name, vibe %> </h2>
    
      <p> <%= vibe.details %> </p>
            
   <span class="badge rounded-pill bg-primary"><%= vibe.color_state %></span>
-  <br>
+                  <br>
           
         <% if vibe.aura.attached? %>
 	<image src="<%=(url_for(vibe.aura)) %>" alt="profile pic" height="250", width="250"><br>
@@ -26,24 +29,17 @@
                        <% if vibe.file.representable? %>
 
                        <video>
-                       <source src<$= rails_blob_path(vibe.file.video_mp4) %> type="video/mp4"/>
-                       <source src<$= rails_blob_path(vibe.file.video_webm) %> type="video/webm"/>
+                       <source src<%= rails_blob_path(vibe.file.video_mp4) %> type="video/mp4"/>
+                       <source src<%= rails_blob_path(vibe.file.video_webm) %> type="video/webm"/>
                       </video>
-                      
-
-                      
+                      <% end %>
                   <% end %>
-                  
-               <% end %>
                  </div>
                 <% end %>
                  
- 
-                     <br>
-    
-  
-            <% else %>
-              <% render 'layouts/static_landing_page' %>
+ <br>
+           <% else %>
+      <% render 'layouts/static_landing_page' %>
   
       <% end %>
 

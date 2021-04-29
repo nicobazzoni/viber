@@ -1,4 +1,25 @@
-<%=form_for @oracle do |f| %>
- <% f.collection_check_boxes %>
+<% if user_signed_in? %>
+
+
+
+  
+   <div class="jumbotron">
+    <%= form_tag  oracles_path, :method => 'get' do |f| %>
+    <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :name => nil %>
+    </p>
+      
+
+
+      
+
+  <% end %>
+  <% end %>
+    </div>
+        
+
+    
  
-<%end %>
+  
+  

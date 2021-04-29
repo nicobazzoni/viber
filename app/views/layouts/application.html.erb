@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+	
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
      <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-		 <link rel="stylesheet" href="application.css.scss">
+		 <link rel="stylesheet" href="application.scss">
   </head>
 
   <body>
@@ -28,12 +29,18 @@
 			</ul>
 			<% if user_signed_in? %>
 				<%= link_to "New Vibe", new_vibe_path, class: "navbar-text navbar-link navbar-right" %>
-			<% end %>
+        <% end %>
+				<% if user_signed_in? %>
+				<%= link_to "C H A T ", new_page_path, class: "navbar-text navbar-link navbar-right" %>
+           <% end %>
+			
 		</div>
+
 	</div>
 	</nav>
-
-  
+	<% if user_signed_in? %>
+<p class="text-center"> <%= current_user.email.split('@')[0].capitalize %> </p>
+   <% end %>
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
     

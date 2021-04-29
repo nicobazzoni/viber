@@ -40,7 +40,7 @@
 }
 
 .container pt-5 pb-5 a:hover {
-  background-color: #851b1b; //background instead of background-image
+  background-color: #000000; //background instead of background-image
 }
 
 a:hover {background: #e8f0ec;
@@ -60,7 +60,7 @@ a:hover {background: #e8f0ec;
  }
 
 p {
-  animation-duration: 3s;
+  animation-duration: 1s;
   animation-name: slidein;
   font-family: 'Times New Roman', Times;
 }
@@ -89,10 +89,24 @@ p {
 }
 
 body {
-  background: #FCE97F;
+  background: #c6e5e7;
   animation: fadebackground 25s infinite;
 }
 @keyframes fadebackground {
   from {background-color: #ffffff;}
   to {background-color: #000000;}
 }
+
+@if enable-transitions {
+  @keyframes progress-bar-animated {
+    0% { background-position-x: progress-height; }
+  }
+}
+
+.center {
+  
+  text-align: center;
+  }
+
+
+ 

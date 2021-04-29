@@ -10,6 +10,8 @@ module Viber
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.1
+    config.time_zone = 'Eastern Time (US & Canada)'
+	  config.active_record.default_timezone = :utc
 
     # Configuration for the application, engines, and railties goes here.
     #

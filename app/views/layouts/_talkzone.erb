@@ -1,0 +1,16 @@
+<div class="well"="box" style="height:300px; border: solid 1px #222222; overflow-y: scroll;">
+<% Message.all.last(50).each do |message| %>
+	<%= render 'messages/message', message: message, currentUser: current_user.id, creator: message.user.id %>
+	
+	<% end %>
+	
+	
+</div>
+<br>
+</br>
+
+<div class="center">
+<%= render 'messages/form' %>
+</div>
+
+

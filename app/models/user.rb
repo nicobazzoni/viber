@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
          has_many :vibes
+         has_many :messages
 
          has_many :oracles, through: :vibes  
 end

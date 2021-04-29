@@ -2,13 +2,17 @@ class Vibe < ApplicationRecord
   belongs_to :user
   has_many :oracles 
   
-  validates :state, inclusion: { in: ['whatevs', 'hurting', 'vibing', ] }
+  validates :state, inclusion: { in: ['whatevs', 'hurting', 'vibing', 'elevated', 'troubled', 'crazy', 'passionate' ] }
   has_one_attached :aura
   has_one_attached :file
   STATE_OPTIONS = [
     ['Whatevs', 'whatevs'],
     ['Hurting', 'hurting'],
-    ['Vibing', 'vibing']
+    ['Vibing', 'vibing'],
+    ['Elevated', 'elevated'],
+    ['Troubled', 'troubled'],
+    ['Crazy', 'crazy'],
+    ['Passionate', 'passionate'],
 
   ]
 
@@ -34,6 +38,15 @@ class Vibe < ApplicationRecord
               'whatevs'
             when 'vibing'
               'vibing'
+            when 'elevated'
+              'elevated'
+            when 'troubled'
+              'troubled'
+            when 'crazy'
+              'crazy'
+            when 'passionate'
+              'passionate'
+
             end
           end
 end

@@ -1,0 +1,23 @@
+
+
+<div class="jumbotron">
+
+<div class="well"="box" style="height:300px; border: solid 1px #222222; overflow-y: scroll;">
+<% Message.all.last(50).each do |message| %>
+	<%= render 'messages/message', message: message, currentUser: current_user.id, creator: message.user.id %>
+	
+	<% end %>
+	
+</div>
+  <%= form_for(@message, remote: true) do |f| %>
+  <div class="input-group mb-3">
+  <%=f.text_field :body, placeholder: "speak to the oracle", class: 'form-control' %>
+  </div>
+  <div class "input-group-append">
+  <% f.submit "Send", class: "btn btn-primary" %>
+   
+  </div>
+  <%end %> 
+
+  
+		

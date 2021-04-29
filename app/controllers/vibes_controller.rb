@@ -9,6 +9,11 @@ class VibesController < ApplicationController
      
 		end
 
+    def vibemeter
+      
+      
+    end
+
   end
 
   def new
