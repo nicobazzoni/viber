@@ -1,0 +1,24 @@
+<div class= "center">
+<h1>S T A T E S </h1> <h1> O F </h1> <h1> M I N D </h1>
+<p>my emotion map</p>
+</div>
+
+
+
+
+<div>
+  
+ <% if user_signed_in? %>
+          <div class= "center">
+            <% @vibes.each do |vibe| %>
+            
+  
+  
+  <li><%= vibe.state%></li>
+  <% end %>
+   <% end %>
+    
+   </div>
+   </div>
+
+  

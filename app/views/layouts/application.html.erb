@@ -33,6 +33,10 @@
 				<% if user_signed_in? %>
 				<%= link_to "C H A T ", new_page_path, class: "navbar-text navbar-link navbar-right" %>
            <% end %>
+					 <% if user_signed_in? %>
+				<%= link_to " EMOTION MAP ", image_elements_path, class: "navbar-text navbar-link navbar-right" %>
+           <% end %>
+			
 			
 		</div>
 

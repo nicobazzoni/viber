@@ -10,7 +10,9 @@ import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
-
+var client_id = 'APP_ID'; // Your client id
+var client_secret = 'APP_SECRET'; // Your secret
+const redirectUri = 'http://localhost:8888/callback'; // Your redirect uri
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()

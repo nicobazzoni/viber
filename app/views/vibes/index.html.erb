@@ -1,19 +1,21 @@
 
 <div class=" center ">
-<div class="jumbotron" style="width: auto;">
+
 <div class="container-fluid">
-  <h1> My Vibes </h1>
-</div>
+  <h1>  V I B E S </h1>
+
 </div>
 
-
+<div>
   
  <% if user_signed_in? %>
-
- <% @vibes.each do |vibe| %>
+          <div class= "center">
+            <% @vibes.each do |vibe| %>
+           
   
-  <div class= " center ">
-   <div class="jumbotron">
+  
+             <div class="jumbotron">
+            
     <h2> <%= link_to vibe.name, vibe %> </h2>
    
      <p> <%= vibe.details %> </p>
