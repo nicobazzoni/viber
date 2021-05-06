@@ -3,17 +3,13 @@
 
 <div class="input-group">
 <%= form_for Message.new, remote: true do |f| %>
-</div>
 
 
-	<%= f.text_field  :body, as: :string, placeholder: "What's up?", class:'form-control', label: false, wrapper: false, autocomplete:'off' %>
 	<div class="input-group-append">
-
-	
-
-		<%= f.submit "Send Message", class: 'btn btn-outline-secondary' %>
+	<%= f.text_field  :body, as: :string, placeholder: "What's up?", class:'form-control', label: false, wrapper: false, autocomplete:'off' %>
+	<%= f.submit "Send Message", class: 'btn btn-outline-secondary', method: :post %>
 	
 </div>
-</div>
+
 <% end %>
-
+</div>

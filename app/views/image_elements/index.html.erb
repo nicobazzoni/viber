@@ -1,22 +1,38 @@
 <div class= "center">
-<h1>S T A T E S </h1> <h1> O F </h1> <h1> M I N D </h1>
-<p>my emotion map</p>
+<div class = "uppercase">
+<h1> states of mind </h1>
+</div>
+<span class="badge rounded-pill bg-light text-dark">MY EMOTIONS</span>
+
 </div>
 
+<br>
 
 
 
-<div>
+
+
+
   
  <% if user_signed_in? %>
           <div class= "center">
+          
+          <li style="list-style-type: none;">
             <% @vibes.each do |vibe| %>
-            
-  
-  
-  <li><%= vibe.state%></li>
+            <div class= "card">
+   <div class= "card-header"> <%=vibe.created_at.strftime("%b %d, %Y %l:%M %p")%> 
+     
+  </div>
+  <div class= "card-body"> 
+     <strong class= "card-text"> <%= vibe.state%> </strong>
+     
   <% end %>
+  <br>
+  </div>
+  </div>
+  <br>
    <% end %>
+   
     
    </div>
    </div>

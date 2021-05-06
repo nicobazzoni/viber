@@ -9,7 +9,7 @@ class PagesController < ApplicationController
       message.user = current_user
       message.save
   
-      render 'new'
+      
     end
 
   
@@ -19,12 +19,17 @@ class PagesController < ApplicationController
     end
   
     def show 
+      Message.find(params[:id])
+      @messages = Message.all
+      @message = Message.new
     end
     
   
     def new
+      
       @messages = Message.all
       @message = Message.new
+      
     end
   
     

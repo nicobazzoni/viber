@@ -18,8 +18,8 @@
   <%= link_to "Didn't receive unlock instructions?", new_unlock_path(resource_name) %><br />
 <% end %>
 
-<%- if devise_mapping.omniauthable? %>
-  <%- resource_class.omniauth_providers.each do |provider| %>
-   <%= link_to "Sign in with Spotify", user_spotify_omniauth_authorize_path, method: :post%> 
-  <% end %>
-<% end %>
+<%# omniauth-google-oauth2 1.0.0 uses OmniAuth 2 and requires using HTTP Post to initiate authentication: %>
+
+
+
+

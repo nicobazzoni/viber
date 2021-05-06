@@ -4,7 +4,7 @@ class Vibe < ApplicationRecord
   
   validates :state, inclusion: { in: ['whatevs', 'hurting', 'vibing', 'elevated', 'troubled', 'crazy', 'passionate' ] }
   has_one_attached :aura
-  has_one_attached :file
+  has_many_attached :files
   STATE_OPTIONS = [
     ['Whatevs', 'whatevs'],
     ['Hurting', 'hurting'],

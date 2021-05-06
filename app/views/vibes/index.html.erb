@@ -1,49 +1,34 @@
 
-<div class=" center ">
 
-<div class="container-fluid">
-  <h1>  V I B E S </h1>
 
-</div>
+  <div class="container-fluid">
+     <center><p1>  V I B E S </p1> </center>
+     </div>
 
-<div>
-  
- <% if user_signed_in? %>
+
+      <% if user_signed_in? %>
           <div class= "center">
             <% @vibes.each do |vibe| %>
            
-  
-  
-             <div class="jumbotron">
-            
-    <h2> <%= link_to vibe.name, vibe %> </h2>
-   
-     <p> <%= vibe.details %> </p>
-           
-  <span class="badge rounded-pill bg-primary"><%= vibe.color_state %></span>
-                  <br>
-          
-        <% if vibe.aura.attached? %>
-	<image src="<%=(url_for(vibe.aura)) %>" alt="profile pic" height="250", width="250"><br>
-
-                      </div>
-
-                       <% if vibe.file.representable? %>
-
-                       <video>
-                       <source src<%= rails_blob_path(vibe.file.video_mp4) %> type="video/mp4"/>
-                       <source src<%= rails_blob_path(vibe.file.video_webm) %> type="video/webm"/>
-                      </video>
+              <div class="jumbotron">
+                <%=vibe.created_at.strftime("%b %d, %Y %l:%M %p")%>
+                <h2> <%= link_to vibe.name, vibe %> </h2>
+                    <p> <%= vibe.details %> </p>
+                  <span class="badge rounded-pill bg-primary"><%= vibe.color_state %></span>
+                    <br>
+                     <% if vibe.aura.attached? %>
+                       <image src="<%=(url_for(vibe.aura)) %>" alt="profile pic" height="250", width="250"><br>
+                      </div>  
                       <% end %>
-                  <% end %>
-                 </div>
-                <% end %>
-                 
- <br>
-           <% else %>
-      <% render 'layouts/static_landing_page' %>
+                      </div>
+	 
+                      <% end %>
+
+                    <br>
+                     <% else %>
+                     <% render 'layouts/static_landing_page' %>
   
-      <% end %>
+                      <% end %>
 
         
   

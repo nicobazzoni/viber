@@ -33,7 +33,10 @@
   border-radius: 5%;
  }
 
- 
+ .uppercase {
+  letter-spacing: 10px;
+  text-transform: uppercase; 
+ }
 
  .jumbotron a:hover {
   background-color: #3374C2; //background instead of background-image
@@ -90,11 +93,11 @@ p {
 
 body {
   background: #c6e5e7;
-  animation: fadebackground 25s infinite;
+  animation: fadebackground 50s infinite;
 }
 @keyframes fadebackground {
   from {background-color: #ffffff;}
-  to {background-color: #000000;}
+  to {background-color: #ffffff;}
 }
 
 @if enable-transitions {
@@ -107,6 +110,8 @@ body {
   
   text-align: center;
   }
+
+  
 
 
  
