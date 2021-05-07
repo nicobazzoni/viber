@@ -3,8 +3,9 @@ class Oracle < ApplicationRecord
 
   
   
-  validates :wisdom, inclusion: { in: ['meh', 'try and relax', 'ugh', 'not in the mood', 'chill' ] }
+  validates :wisdom, inclusion: { in: ['keep it a buck ','meh', 'try and relax', 'ugh', 'not in the mood', 'chill' ] }
   ORACLE_OPTIONS = [
+    'keep it a buck',
      " meh ",
   "try and relax",
     'ugh',

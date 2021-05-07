@@ -7,6 +7,9 @@ class VibesController < ApplicationController
 			# Selects only the checklist items for the current_user.
 			@vibes = Vibe.where(:user_id => current_user.id).order("created_at DESC")
       
+      @emojis = Emoji::Index.new
+
+       
 		end
 
     def vibemeter

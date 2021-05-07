@@ -31,32 +31,32 @@
 				<%= link_to "New Vibe", new_vibe_path, class: "navbar-text navbar-link navbar-right" %>
         <% end %>
 				<% if user_signed_in? %>
-				<%= link_to "C H A T ", new_page_path, class: "navbar-text navbar-link navbar-right" %>
+				<%= link_to "Chat ", new_page_path, class: "navbar-text navbar-link navbar-right" %>
            <% end %>
 					 <% if user_signed_in? %>
-				<%= link_to " states ", image_elements_path, class: "navbar-text navbar-link navbar-right" %>
+				<%= link_to " States ", image_elements_path, class: "navbar-text navbar-link navbar-right" %>
            <% end %>
 					 	 <% if user_signed_in? %>
-				<%= link_to " details ", image_elements_details_path, class: "navbar-text navbar-link navbar-right" %>
+				<%= link_to " Details ", image_elements_details_path, class: "navbar-text navbar-link navbar-right" %>
            <% end %>
 					 <% if user_signed_in? %>
-				<%= link_to " auras/image ", image_elements_auras_path, class: "navbar-text navbar-link navbar-right" %><br>
+				<%= link_to " Auras/Image ", image_elements_auras_path, class: "navbar-text navbar-link navbar-right" %><br>
            <% end %>
-					 	 <% if user_signed_in? %>
-				 
-				<%= link_to "O R A C L E ", oracles_url, class: "navbar-text navbar-link navbar-right" %>
-           <% end %>
-			
-			
-		</div>
-
-	</div>
+				
+			   </div>
+			  </div>
+			</nav>
+			<nav>
+			<p class="center">
+	<%= link_to "O R A C L E ", oracles_url, class: "navbar-text navbar-link navbar-center" %> 
+	</p>
 	</nav>
 	<% if user_signed_in? %>
 <p class="text-center"> <%= current_user.email.split('@')[0].capitalize %> </p>
    <% end %>
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
+
     
     <%= yield %>
   </body>
