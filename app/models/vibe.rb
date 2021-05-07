@@ -1,7 +1,7 @@
 class Vibe < ApplicationRecord
   belongs_to :user
   has_many :states 
-  
+  has_many :auras
   validates :state, inclusion: { in: ['whatevs', 'hurting', 'vibing', 'elevated', 'troubled', 'crazy', 'passionate' ] }
   has_one_attached :aura
   has_many_attached :files

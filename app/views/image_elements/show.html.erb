@@ -1,0 +1,22 @@
+<% if user_signed_in? %>
+          <div class= "center">
+          
+          <li style="list-style-type: none;">
+            <% @vibes.each do |vibe| %>
+            <div class= "card">
+   <div class= "card-header"> <%=vibe.created_at.strftime("%b %d, %Y %l:%M %p")%> 
+     
+  </div>
+  <div class= "card-body"> 
+     <strong class= "card-text"> <%= vibe.detail%> </strong>
+     
+  <% end %>
+  <br>
+  </div>
+  </div>
+  <br>
+   <% end %>
+   
+    
+   </div>
+   </div>

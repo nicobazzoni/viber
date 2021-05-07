@@ -1,18 +1,19 @@
+
 class Oracle < ApplicationRecord
-  has_many  :vibes
-  has_many  :users, through: :vibes 
-  has_many :values
 
-  validates :wisdom, inclusion: { in: [ 'user_id','bravery', 'compassion', 'envy', 'wrath','sloth', 'despair'] }
-
+  
+  
+  validates :wisdom, inclusion: { in: ['meh', 'try and relax', 'ugh', 'not in the mood', 'chill' ] }
   ORACLE_OPTIONS = [
-    ['User_id', 'user_id'],
-    ['Bravery', 'bravery'],
-    ['Compassion', 'compassion'],
-    ['Envy', 'envy'],
-    ['Wrath', 'wrath'],
-    ['Sloth', 'sloth'],
-    ['Despair', 'despair'] ]
+     " meh ",
+  "try and relax",
+    'ugh',
+    'not in the mood',
+    'chill'
+    
+
+  ]
+
     
     def self.search(search)
 

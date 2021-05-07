@@ -34,7 +34,17 @@
 				<%= link_to "C H A T ", new_page_path, class: "navbar-text navbar-link navbar-right" %>
            <% end %>
 					 <% if user_signed_in? %>
-				<%= link_to " EMOTION MAP ", image_elements_path, class: "navbar-text navbar-link navbar-right" %>
+				<%= link_to " states ", image_elements_path, class: "navbar-text navbar-link navbar-right" %>
+           <% end %>
+					 	 <% if user_signed_in? %>
+				<%= link_to " details ", image_elements_details_path, class: "navbar-text navbar-link navbar-right" %>
+           <% end %>
+					 <% if user_signed_in? %>
+				<%= link_to " auras/image ", image_elements_auras_path, class: "navbar-text navbar-link navbar-right" %><br>
+           <% end %>
+					 	 <% if user_signed_in? %>
+				 
+				<%= link_to "O R A C L E ", oracles_url, class: "navbar-text navbar-link navbar-right" %>
            <% end %>
 			
 			

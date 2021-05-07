@@ -16,11 +16,13 @@
                     <p> <%= vibe.details %> </p>
                   <span class="badge rounded-pill bg-primary"><%= vibe.color_state %></span>
                     <br>
+                    
                      <% if vibe.aura.attached? %>
                        <image src="<%=(url_for(vibe.aura)) %>" alt="profile pic" height="250", width="250"><br>
                       </div>  
                       <% end %>
                       </div>
+                      
 	 
                       <% end %>
 

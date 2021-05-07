@@ -1,20 +1,27 @@
 <% if user_signed_in? %>
 
 
+<h1> Create new Vibe </h1>
+<%= simple_form_for @oracle do |f| %>
+
+<span class="badge bg-info text-dark"> O R A C L E</span>
+<%= button_to :wisdom, Oracle::ORACLE_OPTIONS, {}, class: "form Control" %><br>
+
+
+<br>
+<input class="btn btn-primary" type="submit" value="Submit">
+
+ <% end %>
+  
+  
+      
+
+
+
+
+      
 
   
-   <div class="jumbotron">
-    <%= form_tag  oracles_path, :method => 'get' do |f| %>
-    <p>
-    <%= text_field_tag :search, params[:search] %>
-    <%= submit_tag "Search", :name => nil %>
-    </p>
-      
-
-
-      
-
-  <% end %>
   <% end %>
     </div>
         

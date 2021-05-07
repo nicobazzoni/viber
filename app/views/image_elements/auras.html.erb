@@ -1,0 +1,25 @@
+<% if user_signed_in? %>
+          <div class= "center">
+          
+          <li style="list-style-type: none;">
+            <% @vibes.each do |vibe| %>
+            <div class= "card">
+   <div class= "card-header"> <%=vibe.created_at.strftime("%b %d, %Y %l:%M %p")%> 
+     
+  </div>
+  <div class= "card-body"> 
+    <% if vibe.aura.attached? %>
+                       <image src="<%=(url_for(vibe.aura)) %>" alt="profile pic" height="250", width="250"><br>
+                      </div>  
+                      <% end %>
+     
+  <% end %>
+  <br>
+  </div>
+  </div>
+  <br>
+   <% end %>
+   
+    
+   </div>
+   </div>

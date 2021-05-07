@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
  
-    before_action :find_message, only: [:show, :edit, :update, :destroy]
+    before_action :find_message, only: [:show, :index, :edit, :update, :destroy]
     before_action :authenticate_user! 
     
     

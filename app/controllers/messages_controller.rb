@@ -12,11 +12,13 @@ class MessagesController < ApplicationController
   end
 
   def index 
+    Message.find(params[:id])
     @messages = Message.all
     @message = Message.new
   end
 
   def show 
+    @messages = Message.all
   end
   
 

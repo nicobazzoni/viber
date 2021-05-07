@@ -5,9 +5,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable, :omniauthable, :omniauth_providers => [:google_oauth2]
          has_many :vibes,  dependent: :destroy
          has_many :messages, dependent: :destroy
-
-         has_many :states, :class_name => "Vibe", :foreign_key => "User_id"
-
+         has_many :auras, :class_name => "Vibe", :foreign_key => "User_id", dependent: :destroy
+         has_many :states, :class_name => "Vibe", :foreign_key => "User_id", dependent: :destroy
+         
          def self.from_omniauth(auth)
           where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
           user.email = auth.info.email

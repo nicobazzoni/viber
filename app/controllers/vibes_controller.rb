@@ -6,7 +6,7 @@ class VibesController < ApplicationController
 			# Selects the items where the user's id is the same as the current_user.
 			# Selects only the checklist items for the current_user.
 			@vibes = Vibe.where(:user_id => current_user.id).order("created_at DESC")
-     
+      
 		end
 
     def vibemeter
@@ -46,6 +46,7 @@ class VibesController < ApplicationController
       render 'new'
     end
   end
+    
     def destroy
       @vibe.destroy
       redirect_to root_path
