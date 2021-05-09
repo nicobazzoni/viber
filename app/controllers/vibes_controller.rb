@@ -14,7 +14,7 @@ class VibesController < ApplicationController
 
     def vibemeter
       
-      @vibe = current_user.vibes.build
+      @vibe = current_user.users.build
     end
 
   end

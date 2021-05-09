@@ -20,12 +20,17 @@
 				    <%= link_to "Vibelist", root_path, class: "navbar-brand" %>
 			</div>
 			<ul class="nav navbar-nav">
-				<li><%= link_to "Sign Up", new_user_registration_path %></li>
-				<% if current_user.present? %>
+			<% if current_user.present? %>
 					<li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
 				<% else %>
 					<li><%= link_to "Log In", new_user_session_path %></li>
+						<li><%= link_to "Sign Up", new_user_registration_path %></li>
+				
 				<% end %>
+					 <% if user_signed_in? %>
+				<%= link_to " Search ", users_path, class: "navbar-text navbar-link navbar-right" %><br>
+           <% end %>
+				
 			</ul>
 			<% if user_signed_in? %>
 				<%= link_to "New Vibe", new_vibe_path, class: "navbar-text navbar-link navbar-right" %>
@@ -42,22 +47,26 @@
 					 <% if user_signed_in? %>
 				<%= link_to " Auras/Image ", image_elements_auras_path, class: "navbar-text navbar-link navbar-right" %><br>
            <% end %>
+					 
 				
 			   </div>
 			  </div>
 			</nav>
-			<nav>
-			<p class="center">
-	<%= link_to "O R A C L E ", oracles_url, class: "navbar-text navbar-link navbar-center" %> 
-	</p>
-	</nav>
+			
+			
+
+
+	
+	
 	<% if user_signed_in? %>
-<p class="text-center"> <%= current_user.email.split('@')[0].capitalize %> </p>
+  <p class="text-center"> <%= current_user.email.split('@')[0].capitalize %> </p>
    <% end %>
+	 <center> <h4> <%= link_to "O R A C L E ", oracles_url %> </center> </h4>
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
 
     
     <%= yield %>
+		
   </body>
 </html>

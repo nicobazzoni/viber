@@ -1,0 +1,9 @@
+
+<center></h4> Create Profile </h4></center>
+ <%= simple_form_for @user do |f| %>
+  <%= f.input :name %>
+  <%= f.input :bio %>
+  <%= f.button :submit, 'Save', class: 'submit' %>
+ <% end %>
+
+

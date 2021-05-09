@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'profile/index'
   get 'image_elements/index'
   get 'image_elements/new'
   get 'image_elements/auras'
@@ -10,12 +11,14 @@ Rails.application.routes.draw do
   get 'oracles', to: 'oracles#index'
   
   get 'youtube/index'
- 
+  
+  
 
- 
  
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
-
+  
+ 
+        
   
   
     
@@ -27,7 +30,9 @@ Rails.application.routes.draw do
   resources :oracles
   resource :messages
   resources :pages
-  
+  resources :users
+  resources :profiles
+ 
   
   root "vibes#index"
 end
