@@ -37,17 +37,19 @@
         <% end %>
 				<% if user_signed_in? %>
 				<%= link_to "Chat ", new_page_path, class: "navbar-text navbar-link navbar-right" %>
-           <% end %>
-					 <% if user_signed_in? %>
+        <% end %>
+				<% if user_signed_in? %>
 				<%= link_to " States ", image_elements_path, class: "navbar-text navbar-link navbar-right" %>
-           <% end %>
-					 	 <% if user_signed_in? %>
+        <% end %>
+				<% if user_signed_in? %>
 				<%= link_to " Details ", image_elements_details_path, class: "navbar-text navbar-link navbar-right" %>
-           <% end %>
-					 <% if user_signed_in? %>
-				<%= link_to " Auras/Image ", image_elements_auras_path, class: "navbar-text navbar-link navbar-right" %><br>
-           <% end %>
-					 
+        <% end %>
+				<% if user_signed_in? %>
+				<%= link_to " Auras/Image ", image_elements_auras_path, class: "navbar-text navbar-link navbar-right" %>
+        <% end %>
+			 <% if user_signed_in? %>
+				<%= link_to " Clubs ", clubs_path, class: "navbar-text navbar-link navbar-right" %>
+        <% end %>
 				
 			   </div>
 			  </div>

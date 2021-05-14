@@ -9,20 +9,14 @@ Rails.application.routes.draw do
   post 'messages', to: 'pages#create'
   get 'spotify/index'
   get 'oracles', to: 'oracles#index'
-  
+  get 'enemies', to: 'grudges#create'
   get 'youtube/index'
-  
+  get 'vibes/vibemeter'
   
 
  
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   
- 
-        
-  
-  
-    
-    
  
   resources :vibes
 
@@ -32,6 +26,10 @@ Rails.application.routes.draw do
   resources :pages
   resources :users
   resources :profiles
+  resources :grudges
+  resources :enemies
+  resources :clubs
+  resources :memberships
  
   
   root "vibes#index"

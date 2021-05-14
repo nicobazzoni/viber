@@ -1,8 +1,7 @@
 class UsersController < ApplicationController
-  
+  attr_accessor :name, :bio
   before_action :authenticate_user!, except: [:index]
-  
-  
+ 
      def index 
    
       @users = User.search(params[:search])
@@ -38,7 +37,7 @@ class UsersController < ApplicationController
   end
 
   def update
-    if @user.build.update(user_params)
+    if @user.update(user_params)
       redirect_to user_profile
     else
       render 'new'

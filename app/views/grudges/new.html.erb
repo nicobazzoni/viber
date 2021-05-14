@@ -1,0 +1,24 @@
+<h1>Create a new Grudge:</h1>
+<%= form_for(@grudge) do |f|%>
+  <div>
+    <%= f.label :reason%>
+    <%= f.text_field :reason%>
+  </div><br>
+	
+
+  <div>
+    <label for="grudge_enemy_id">Select an enemy:</label>
+    <%= f.collection_select :enemy_id, Enemy.all, :id, :name, prompt: true%>
+  </div><br>
+
+  <div>
+  <h3>Or create a new enemy:</h3>
+  <%= f.fields_for :enemy, Enemy.new do |enemy_attributes|%>
+      <%= enemy_attributes.label :name, "Enemy Name:" %>
+      <%= enemy_attributes.text_field :name %>
+  <% end %>
+</div>
+	
+  <%= f.submit %>
+	
+<% end %>

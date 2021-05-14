@@ -1,7 +1,6 @@
 
  class ProfilesController < ApplicationController
 
-  before_action :authenticate_user!, except: [:index, :show]
   
     
     def index
@@ -41,7 +40,7 @@ def find_profile
 end
 
 def profile_params
-  params.permit(:profile).permit(:id, :name, :photo, :bio) 
+  params.permit(:profile).permit(:user_id, :name, :photo, :bio) 
 end
  end
   

@@ -8,6 +8,9 @@ class User < ApplicationRecord
          has_many :auras, :class_name => "Vibe", :foreign_key => "User_id", dependent: :destroy
          has_many :states, :class_name => "Vibe", :foreign_key => "User_id", dependent: :destroy
          has_many :details, :class_name => "Vibe", :foreign_key => "User_id", dependent: :destroy
+         has_many :memberships
+         has_many :clubs, through: :memberships
+        
          def self.from_omniauth(auth)
           where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
           user.email = auth.info.email
@@ -17,7 +20,7 @@ class User < ApplicationRecord
 
 
       
-      has_one :profile
+         
     
     
 
@@ -34,6 +37,7 @@ class User < ApplicationRecord
     unscoped
     end
   end
+  
   
 end
         

@@ -1,0 +1,5 @@
+<% Club.all.each do |club| %>
+  <%= check_box_tag "user[club_ids][]", club.id, @user.club_ids.include?(club.id) %>
+  <%= club.name %>
+  <br />
+<% end %>

@@ -3,31 +3,25 @@ class VibesController < ApplicationController
   before_action :authenticate_user!, except: [:index, :vibemeter]
   def index 
     if user_signed_in? 
-			# Selects the items where the user's id is the same as the current_user.
-			# Selects only the checklist items for the current_user.
+		
 			@vibes = Vibe.where(:user_id => current_user.id).order("created_at DESC")
       
-      @emojis = Emoji::Index.new
-
-       
-		end
-
-    def vibemeter
       
-      @vibe = current_user.users.build
+      end
     end
 
-  end
+     def vibemeter
+      @vibes = Vibe.hurting_vibe
+      end
 
-  def new
-    @vibe = current_user.vibes.build
-  end
+    def new
+      @vibe = current_user.vibes.build
+    end
 
   def show 
     @vibe = Vibe.find(params[:id])
    
-   
-  end
+   end
 
   def create
     

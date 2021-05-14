@@ -1,6 +1,6 @@
 
 
-<div class="well" id="message_<%=message.id%>">
+<div class="well"="box" id="message_<%=message.id%>">
 	<div style="display:inline-block;">
 		[<%= message.created_at.strftime("%l:%M %p") %>] <%= message.user.email.split('@')[0].capitalize %>
 		:<%= message.body %>

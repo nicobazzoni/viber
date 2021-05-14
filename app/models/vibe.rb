@@ -5,6 +5,8 @@ class Vibe < ApplicationRecord
   validates :state, inclusion: { in: ['whatevs', 'hurting', 'vibing', 'elevated', 'troubled', 'crazy', 'passionate' ] }
   has_one_attached :aura
   has_many_attached :files
+  
+  has_many :users, {:through=>:insights, :source=>"user"}
   STATE_OPTIONS = [
     ['Whatevs', 'whatevs'],
     ['Hurting', 'hurting'],
@@ -15,10 +17,11 @@ class Vibe < ApplicationRecord
     ['Passionate', 'passionate'],
 
   ]
-
+   scope :hurting_vibe, -> { where("state > 2") }
  
-
-         def color_aura
+  
+         
+      def color_aura
           case aura
           when 'hurting'
             'hurting'
