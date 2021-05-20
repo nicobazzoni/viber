@@ -6,7 +6,9 @@ class Vibe < ApplicationRecord
   has_one_attached :aura
   has_many_attached :files
   
-  has_many :users, {:through=>:insights, :source=>"user"}
+ 
+  
+  
   STATE_OPTIONS = [
     ['Whatevs', 'whatevs'],
     ['Hurting', 'hurting'],

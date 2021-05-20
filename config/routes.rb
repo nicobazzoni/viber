@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'profile/index'
+ 
   get 'image_elements/index'
   get 'image_elements/new'
   get 'image_elements/auras'
@@ -13,24 +13,32 @@ Rails.application.routes.draw do
   get 'youtube/index'
   get 'vibes/vibemeter'
   
+ 
 
  
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+ 
   
  
-  resources :vibes
+
+  
+  resources :vibes 
+  
 
   resources :image_elements
   resources :oracles
   resource :messages
   resources :pages
-  resources :users
-  resources :profiles
-  resources :grudges
-  resources :enemies
-  resources :clubs
-  resources :memberships
+  resources :dreamers, only: [:index, :new, :create]
  
+  resources :dreamers do
+    resources :dreamcatchers, shallow: true
+
+    
+
+  end
+  
+  
   
   root "vibes#index"
 end

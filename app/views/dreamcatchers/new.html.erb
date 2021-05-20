@@ -1,0 +1,15 @@
+
+ 
+<%= form_for (@dreamcatcher) do |f|%>
+   
+<h3>Kind of Dream:</h3>
+<%= f.collection_select :dream %>
+
+ <h3>Dream:</h3>
+ <%= text_field_tag :description %>
+        
+    
+    
+   <%=submit_tag "submit"  %>
+
+<% end %>

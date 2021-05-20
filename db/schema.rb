@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_12_015917) do
+ActiveRecord::Schema.define(version: 2021_05_19_015759) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -40,29 +40,28 @@ ActiveRecord::Schema.define(version: 2021_05_12_015917) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
-  create_table "avatars", force: :cascade do |t|
+  create_table "dreamcatchers", force: :cascade do |t|
+    t.integer "dream_id", null: false
+    t.integer "dreamer_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_id", null: false
+    t.text "description"
+    t.index ["dream_id"], name: "index_dreamcatchers_on_dream_id"
+    t.index ["dreamer_id"], name: "index_dreamcatchers_on_dreamer_id"
+    t.index ["user_id"], name: "index_dreamcatchers_on_user_id"
+  end
+
+  create_table "dreamers", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "clubs", force: :cascade do |t|
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+  create_table "dreams", force: :cascade do |t|
     t.string "name"
-  end
-
-  create_table "enemies", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "name"
-    t.integer "grudge_id"
-  end
-
-  create_table "grudges", force: :cascade do |t|
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.string "reason"
   end
 
   create_table "image_elements", force: :cascade do |t|
@@ -70,26 +69,6 @@ ActiveRecord::Schema.define(version: 2021_05_12_015917) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["page_id"], name: "index_image_elements_on_page_id"
-  end
-
-  create_table "insights", force: :cascade do |t|
-    t.string "name"
-    t.string "description"
-    t.integer "vibes_id", null: false
-    t.integer "user_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_insights_on_user_id"
-    t.index ["vibes_id"], name: "index_insights_on_vibes_id"
-  end
-
-  create_table "memberships", force: :cascade do |t|
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.integer "avatar_id", null: false
-    t.integer "club_id", null: false
-    t.index ["avatar_id"], name: "index_memberships_on_avatar_id"
-    t.index ["club_id"], name: "index_memberships_on_club_id"
   end
 
   create_table "messages", force: :cascade do |t|
@@ -102,17 +81,9 @@ ActiveRecord::Schema.define(version: 2021_05_12_015917) do
 
   create_table "oracles", force: :cascade do |t|
     t.string "wisdom"
+    t.string "sloth"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "profiles", force: :cascade do |t|
-    t.string "photo"
-    t.string "name"
-    t.text "bio"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.integer "user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -145,10 +116,9 @@ ActiveRecord::Schema.define(version: 2021_05_12_015917) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "dreamcatchers", "dreamers"
+  add_foreign_key "dreamcatchers", "dreams"
+  add_foreign_key "dreamcatchers", "users"
   add_foreign_key "image_elements", "pages"
-  add_foreign_key "insights", "users"
-  add_foreign_key "insights", "vibes", column: "vibes_id"
-  add_foreign_key "memberships", "avatars"
-  add_foreign_key "memberships", "clubs"
   add_foreign_key "messages", "users"
 end

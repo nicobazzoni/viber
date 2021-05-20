@@ -28,7 +28,7 @@
 				
 				<% end %>
 					 <% if user_signed_in? %>
-				<%= link_to " Search ", users_path, class: "navbar-text navbar-link navbar-right" %><br>
+				<%= link_to " Search ", user_session_path, class: "navbar-text navbar-link navbar-right" %><br>
            <% end %>
 				
 			</ul>
@@ -47,9 +47,10 @@
 				<% if user_signed_in? %>
 				<%= link_to " Auras/Image ", image_elements_auras_path, class: "navbar-text navbar-link navbar-right" %>
         <% end %>
-			 <% if user_signed_in? %>
-				<%= link_to " Clubs ", clubs_path, class: "navbar-text navbar-link navbar-right" %>
-        <% end %>
+
+			
+			
+			
 				
 			   </div>
 			  </div>

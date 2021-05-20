@@ -1,0 +1,12 @@
+<%= form_for @dreamcatcher do  |f|%>
+    <h3>Dream:</h3>
+
+    <%= f.select :dreams %>
+
+    <%= f.fields_for :dreamcatchers do |field| %>
+        <%= field.label "description" %></div>
+        <%= field.text_field :description %>
+        <% end %>
+    <%=f.submit  %>
+
+<% end %>

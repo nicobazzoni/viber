@@ -1,18 +1,9 @@
-<%= simple_form_for(@club) do |f| %>
 
-  <%= hidden_field_tag "membership[membership_ids][]", nil %>
-  <%= f.error_notification %>
-  <%= f.input :name %>
-  
-  <%= f.fields_for :avatar_attributes do |f|%>
-   <%= hidden_field_tag "Avatar[avatar_ids][]", nil %>
-      <%= f.label :name, "Avatar Name:" %>
-      <% Avatar.all.each do |avatar| %>
-      <%= avatar.name %>
-      <% end %>
-
-  <%= f.error :base %>
-  <% end %>
-  <%= f.button :submit %>
+<%= simple_form_for @dream do |f| %>
+  <%= f.label "Name of Dream" %>
+  <%= f.text_field :name %>
+ 
+ <%= f.collection_select :dream_catcher %>
+  <%= f.submit %>
 <% end %>
 
