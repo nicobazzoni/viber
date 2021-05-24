@@ -1,12 +1,13 @@
-<%= form_for @dreamcatcher do  |f|%>
-    <h3>Dream:</h3>
 
-    <%= f.select :dreams %>
 
-    <%= f.fields_for :dreamcatchers do |field| %>
-        <%= field.label "description" %></div>
-        <%= field.text_field :description %>
-        <% end %>
-    <%=f.submit  %>
+<%= form_for @dreamer do |f|%>
+ <%= f.hidden_field :dreamcatcher_id, value: @dreamcatcher.id %> %>
+<%= f.text_field :description %>
 
-<% end %>
+    <h3>Kind of Dream:</h3>
+     <%= f.hidden_field :dream_ids, value: @dream.id %> %>
+  <%= f.fields_for :dreams do |s| %>
+    <%= s.collection_select :name %>
+  <% end %>
+   <%= submit_tag "submit"  %>
+ <% end %>

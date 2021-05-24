@@ -1,0 +1,18 @@
+<h3> Create a lesson<h3>
+<div class = "jumbotron">
+<%= form_for @student do |f| %>
+<h3> Student <h3>
+<%= f.label :student, "name" %>
+<%= f.text_field :name %>
+   <%= f.fields_for :lessons do |lf| %>
+   <%= lf.hidden_field :guide_id, value: @guide.id %>
+      <h3> Lesson <h3>
+      <%= lf.label :lesson, "Title" %>
+      <%= lf.text_field :title %> <br>
+       <%= lf.label :description %>
+      <%= lf.text_field :description %>
+      <% end %><br>
+    <%= submit_tag "submit"  %>
+<% end %>
+
+</div>

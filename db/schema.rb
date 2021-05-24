@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_19_015759) do
+ActiveRecord::Schema.define(version: 2021_05_23_015400) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -64,11 +64,29 @@ ActiveRecord::Schema.define(version: 2021_05_19_015759) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "guides", force: :cascade do |t|
+    t.string "name"
+    t.integer "age"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "image_elements", force: :cascade do |t|
     t.integer "page_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["page_id"], name: "index_image_elements_on_page_id"
+  end
+
+  create_table "lessons", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.integer "guide_id", null: false
+    t.integer "student_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["guide_id"], name: "index_lessons_on_guide_id"
+    t.index ["student_id"], name: "index_lessons_on_student_id"
   end
 
   create_table "messages", force: :cascade do |t|
@@ -82,6 +100,12 @@ ActiveRecord::Schema.define(version: 2021_05_19_015759) do
   create_table "oracles", force: :cascade do |t|
     t.string "wisdom"
     t.string "sloth"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "students", force: :cascade do |t|
+    t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -120,5 +144,7 @@ ActiveRecord::Schema.define(version: 2021_05_19_015759) do
   add_foreign_key "dreamcatchers", "dreams"
   add_foreign_key "dreamcatchers", "users"
   add_foreign_key "image_elements", "pages"
+  add_foreign_key "lessons", "guides"
+  add_foreign_key "lessons", "students"
   add_foreign_key "messages", "users"
 end

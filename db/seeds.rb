@@ -5,6 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
- Dream.create!(name:"Nightmare")
- Dream.create!(name:"Lucid")
- Dream.create!(name: "Pleasant")
+ 
+ Guide.create!(name: "Pleasant", age:5000)
+ Guide.create!(name: "Tremor", age:10000)
+ Guide.create!(name: "Pheonix", age:50000)

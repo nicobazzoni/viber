@@ -29,10 +29,10 @@ Rails.application.routes.draw do
   resources :oracles
   resource :messages
   resources :pages
-  resources :dreamers, only: [:index, :new, :create]
+  resources :students, only: [:index, :new, :create]
  
-  resources :dreamers do
-    resources :dreamcatchers, shallow: true
+  resources :students do
+    resources :lessons, shallow: true
 
     
 
